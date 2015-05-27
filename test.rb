@@ -1,8 +1,44 @@
 require 'minitest/autorun'
 require 'pry'
 
+
 class ListAnalyzer
-  # Wat
+
+  def number_of_words_starting_with_a_vowel words
+    words_starting_with_vowel = 0
+    words.each do |word|
+      if word.start_with?("a","e","i","o","u")
+        words_starting_with_vowel += 1
+      end
+      # return words_starting_with_vowel
+    end
+    return words_starting_with_vowel
+  end
+
+  def all_words_start_with_vowels? words
+    # one option:
+    # number_of_words_starting_with_a_vowel(words) == words.length
+    words.each do |word|
+      if !word.start_with?("a", "e", "i", "o", "u")
+        return false
+      end
+    end
+    return true
+  end
+
+  def number_of_vowels_in_all_words produce
+    lister = 14
+  end
+
+  def some_word_starts_with_a_vowel? words
+    # number_of_words_starting_with_a_vowel(words) > 0
+    words.each do |word|
+      if word.start_with?("a", "e", "i", "o", "u")
+        return true
+      end
+    end
+    return false
+  end
 end
 
 
