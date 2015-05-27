@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'pry'
 
 class ListAnalyzer
+  # Wat
 end
 
 
