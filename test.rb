@@ -9,34 +9,21 @@ class ListAnalyzer
   end
 
   def starts_with_vowel? word
-    vowels.each do |vowel|
-      if word.start_with? vowel
-        return true
-      end
+    vowels.any? do |vowel|
+      word.start_with? vowel
     end
-    return false
   end
 
   def number_of_words_starting_with_a_vowel words
-    words_starting_with_vowel = 0
-    words.each do |word|
-      if starts_with_vowel?(word)
-        words_starting_with_vowel += 1
-      end
-      # return words_starting_with_vowel
+    words.count do |word|
+      starts_with_vowel?(word)
     end
-    return words_starting_with_vowel
   end
 
   def all_words_start_with_vowels? words
-    # one option:
-    # number_of_words_starting_with_a_vowel(words) == words.length
-    words.each do |word|
-      if !starts_with_vowel?(word)
-        return false
-      end
+    words.all? do |word|
+      starts_with_vowel? word
     end
-    return true
   end
 
   def number_of_vowels_in_all_words produce
@@ -44,13 +31,9 @@ class ListAnalyzer
   end
 
   def some_word_starts_with_a_vowel? words
-    # number_of_words_starting_with_a_vowel(words) > 0
-    words.each do |word|
-      if starts_with_vowel?(word)
-        return true
-      end
+    words.any? do |word|
+      starts_with_vowel? word
     end
-    return false
   end
 end
 
